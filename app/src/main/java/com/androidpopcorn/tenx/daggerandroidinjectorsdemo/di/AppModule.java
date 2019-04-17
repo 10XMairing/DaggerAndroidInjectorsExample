@@ -6,7 +6,6 @@ import android.app.Application;
 
 import com.androidpopcorn.tenx.daggerandroidinjectorsdemo.data.ApiService;
 import com.androidpopcorn.tenx.daggerandroidinjectorsdemo.ui.MainActivity;
-import com.androidpopcorn.tenx.daggerandroidinjectorsdemo.ui.MainSubComponent;
 
 import javax.inject.Singleton;
 
@@ -19,15 +18,8 @@ import dagger.multibindings.IntoMap;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 
-@Module(subcomponents = MainSubComponent.class)
+@Module
 public abstract class AppModule {
-
-
-
-    @Binds
-    @IntoMap
-    @ActivityKey(MainActivity.class)
-    abstract AndroidInjector.Factory<? extends Activity> bindMainActivityInjectorFactory(MainSubComponent.Builder builder);
 
 
     @Provides
